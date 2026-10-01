@@ -1,0 +1,15 @@
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\bin\Debug\net10.0\FactorialRecursivo.exe
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\bin\Debug\net10.0\FactorialRecursivo.deps.json
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\bin\Debug\net10.0\FactorialRecursivo.runtimeconfig.json
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\bin\Debug\net10.0\FactorialRecursivo.dll
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\bin\Debug\net10.0\FactorialRecursivo.pdb
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\obj\Debug\net10.0\FactorialRecursivo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\obj\Debug\net10.0\FactorialRecursivo.AssemblyInfoInputs.cache
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\obj\Debug\net10.0\FactorialRecursivo.AssemblyInfo.cs
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\obj\Debug\net10.0\FactorialRecursivo.csproj.CoreCompileInputs.cache
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\obj\Debug\net10.0\FactorialRecursivo.dll
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\obj\Debug\net10.0\refint\FactorialRecursivo.dll
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\obj\Debug\net10.0\FactorialRecursivo.pdb
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\obj\Debug\net10.0\FactorialRecursivo.genruntimeconfig.cache
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\obj\Debug\net10.0\ref\FactorialRecursivo.dll
+C:\Users\niomu\Desktop\FactorialRecursivo\FactorialRecursivo\obj\Debug\net10.0\Factoria.4191211B.Up2Date
