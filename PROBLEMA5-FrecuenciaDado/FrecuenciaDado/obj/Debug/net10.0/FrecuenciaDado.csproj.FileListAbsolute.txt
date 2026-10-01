@@ -1,0 +1,15 @@
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\bin\Debug\net10.0\FrecuenciaDado.exe
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\bin\Debug\net10.0\FrecuenciaDado.deps.json
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\bin\Debug\net10.0\FrecuenciaDado.runtimeconfig.json
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\bin\Debug\net10.0\FrecuenciaDado.dll
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\bin\Debug\net10.0\FrecuenciaDado.pdb
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\obj\Debug\net10.0\FrecuenciaDado.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\obj\Debug\net10.0\FrecuenciaDado.AssemblyInfoInputs.cache
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\obj\Debug\net10.0\FrecuenciaDado.AssemblyInfo.cs
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\obj\Debug\net10.0\FrecuenciaDado.csproj.CoreCompileInputs.cache
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\obj\Debug\net10.0\FrecuenciaDado.dll
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\obj\Debug\net10.0\refint\FrecuenciaDado.dll
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\obj\Debug\net10.0\FrecuenciaDado.pdb
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\obj\Debug\net10.0\FrecuenciaDado.genruntimeconfig.cache
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\obj\Debug\net10.0\ref\FrecuenciaDado.dll
+C:\Users\niomu\Desktop\FrecuenciaDado\FrecuenciaDado\obj\Debug\net10.0\Frecuenc.1E7684DC.Up2Date
