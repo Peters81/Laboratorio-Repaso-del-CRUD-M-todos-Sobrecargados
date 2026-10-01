@@ -190,7 +190,7 @@ Estos ejemplos muestran por qué es importante evitar construir consultas SQL co
 
 Una de las principales formas de prevención es utilizar **consultas preparadas y parametrizadas**, ya que permiten que los valores ingresados sean tratados como datos y no como instrucciones SQL.
 
---
+---
 
 ## 🟥PROBLEMA 2 – Uso de Dictionary, List y generación dinámica de SQL
 En este problema se trabajó con un `Dictionary<string, object>` para almacenar información de un producto y posteriormente utilizar sus claves para construir de forma dinámica partes de una consulta SQL.
@@ -302,16 +302,6 @@ VALUES (@Nombre, @Precio, @Cantidad)
 
 La consulta se construye automáticamente a partir de las claves del diccionario, sin escribir manualmente cada columna.
 
-## Resultado esperado
-Al ejecutar el programa, en la consola se muestra:
-
-```text
-Cláusula SET generada: Nombre = @Nombre, Precio = @Precio, Cantidad = @Cantidad
-
-La cadena sql es: INSERT INTO productos (Nombre, Precio, Cantidad) VALUES (@Nombre, @Precio, @Cantidad)
-```
-
-
 
 ## Imagen de ejecución
 ![Ejecución Problema 2](CAPTURAS/Problema2.png)
@@ -323,5 +313,86 @@ En este problema se practicó el uso conjunto de **diccionarios, listas, ciclos 
 El `Dictionary<string, object>` permitió almacenar los datos del producto utilizando los nombres de las columnas como claves. Posteriormente, `.Keys` permitió obtener esas claves y utilizarlas para generar automáticamente tanto una cláusula `SET` como una sentencia `INSERT INTO`.
 
 Con este ejemplo se puede comprender cómo estas estructuras permiten crear código más flexible y reutilizable al momento de trabajar con operaciones CRUD y consultas SQL.
+---
 
+## 🟥PROBLEMA 3 – Recursividad con el cálculo del factorial
+
+En este problema se trabaja el concepto de **recursividad**, utilizando un método llamado `Factorial()` que se llama a sí mismo para calcular el factorial de un número.
+
+Según la teoría vista en clase, un método recursivo es aquel que se llama a sí mismo de forma directa o indirecta. Para que funcione correctamente, debe existir un **caso base** que permita detener las llamadas recursivas.
+
+### Conceptos importantes
+
+#### Método recursivo
+
+El método utilizado es:
+
+```csharp
+public static long Factorial(long numero)
+```
+
+Este método recibe un número y calcula su factorial.
+
+La parte principal de la recursividad ocurre en:
+
+```csharp
+return numero * Factorial(numero - 1);
+```
+
+Aquí el método vuelve a llamarse a sí mismo, pero cada vez con un número menor.
+
+Por ejemplo:
+
+```text
+5! = 5 × 4 × 3 × 2 × 1
+```
+
+La idea es ir reduciendo el problema hasta llegar al caso más sencillo.
+
+#### Caso base
+
+```csharp
+if (numero <= 1)
+    return 1;
+```
+
+El **caso base** permite detener la recursividad.
+
+Cuando el número llega a `1` o `0`, el método devuelve `1` y deja de llamarse a sí mismo.
+
+#### Paso de recursividad
+
+```csharp
+return numero * Factorial(numero - 1);
+```
+
+Este es el **paso recursivo**, porque el método vuelve a llamarse con una versión más pequeña del problema.
+
+Cada llamada disminuye el valor de `numero` en `1` hasta llegar al caso base.
+
+#### Uso del ciclo `for`
+
+En el método `Main` se utiliza un ciclo:
+
+```csharp
+for (long contador = 0; contador <= 10; contador++)
+```
+
+Este ciclo permite calcular y mostrar en consola los factoriales desde `0` hasta `10`.
+
+La variable `contador` solo existe dentro del alcance del ciclo `for`.
+
+
+### Imagen de ejecución
+![Ejecución Problema 3](CAPTURAS/Problema3.png)
+
+
+### ¿Qué demuestra este problema?
+
+Este problema permite comprender cómo funciona un **método recursivo**, identificando sus dos partes principales:
+
+- **Caso base:** detiene la recursividad.
+- **Paso recursivo:** vuelve a llamar al mismo método con un problema más pequeño.
+
+De esta forma, el programa puede resolver el cálculo del factorial reutilizando el mismo método hasta llegar al caso base.
 
