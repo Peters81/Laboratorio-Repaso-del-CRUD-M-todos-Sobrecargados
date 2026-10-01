@@ -1,0 +1,15 @@
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\bin\Debug\net10.0\EjemploCLaseListasyDic.exe
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\bin\Debug\net10.0\EjemploCLaseListasyDic.deps.json
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\bin\Debug\net10.0\EjemploCLaseListasyDic.runtimeconfig.json
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\bin\Debug\net10.0\EjemploCLaseListasyDic.dll
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\bin\Debug\net10.0\EjemploCLaseListasyDic.pdb
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\obj\Debug\net10.0\EjemploCLaseListasyDic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\obj\Debug\net10.0\EjemploCLaseListasyDic.AssemblyInfoInputs.cache
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\obj\Debug\net10.0\EjemploCLaseListasyDic.AssemblyInfo.cs
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\obj\Debug\net10.0\EjemploCLaseListasyDic.csproj.CoreCompileInputs.cache
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\obj\Debug\net10.0\EjemploCLaseListasyDic.dll
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\obj\Debug\net10.0\refint\EjemploCLaseListasyDic.dll
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\obj\Debug\net10.0\EjemploCLaseListasyDic.pdb
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\obj\Debug\net10.0\EjemploCLaseListasyDic.genruntimeconfig.cache
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\obj\Debug\net10.0\ref\EjemploCLaseListasyDic.dll
+C:\Users\niomu\Desktop\EjemploCLaseListasyDic\EjemploCLaseListasyDic\obj\Debug\net10.0\EjemploC.C874C5FC.Up2Date
