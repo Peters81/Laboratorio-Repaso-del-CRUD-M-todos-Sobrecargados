@@ -508,3 +508,115 @@ Como `8` y `9` son enteros, en ambos casos se utiliza la versión que recibe un 
 Este problema demuestra cómo la **sobrecarga de métodos** permite utilizar un mismo nombre para realizar una operación similar con diferentes tipos de datos.
 
 En este caso, `Cuadrado()` puede trabajar tanto con valores `int` como con valores `double`, y C# selecciona automáticamente la versión correcta según el argumento utilizado.
+
+## 🟥PROBLEMA 5 – Simulación del lanzamiento de un dado
+
+En este problema se simula el lanzamiento de un dado **6000 veces** utilizando la clase `Random`. El objetivo es generar valores aleatorios entre `1` y `6` y contar cuántas veces aparece cada cara.
+
+### Conceptos importantes
+
+#### Uso de `Random`
+
+Primero se crea un objeto de la clase `Random`:
+
+```csharp
+Random numerosAleatorios = new Random();
+```
+
+Este objeto se utiliza para generar números aleatorios durante la ejecución del programa.
+
+La instrucción:
+
+```csharp
+cara = numerosAleatorios.Next(1, 7);
+```
+
+genera valores desde `1` hasta `6`.
+
+El segundo valor, `7`, no se incluye, por lo que los posibles resultados son:
+
+```text
+1, 2, 3, 4, 5, 6
+```
+
+#### Contadores de frecuencia
+
+Se crean seis variables:
+
+```csharp
+frecuencia1
+frecuencia2
+frecuencia3
+frecuencia4
+frecuencia5
+frecuencia6
+```
+
+Cada una almacena cuántas veces aparece una cara específica del dado.
+
+Por ejemplo:
+
+```text
+frecuencia1 -> cantidad de veces que salió 1
+frecuencia2 -> cantidad de veces que salió 2
+...
+frecuencia6 -> cantidad de veces que salió 6
+```
+
+#### Ciclo `for`
+
+El ciclo:
+
+```csharp
+for (int tiro = 1; tiro <= 6000; tiro++)
+```
+
+hace que el lanzamiento se repita **6000 veces**.
+
+En cada vuelta se genera un nuevo valor aleatorio y se guarda en la variable `cara`.
+
+#### Uso de `switch`
+
+Después se utiliza un `switch` para identificar qué cara salió:
+
+```csharp
+switch (cara)
+```
+
+Dependiendo del valor generado, se incrementa el contador correspondiente.
+
+Por ejemplo:
+
+```csharp
+case 3:
+    frecuencia3++;
+    break;
+```
+
+Si el valor generado es `3`, la variable `frecuencia3` aumenta en uno.
+
+El `break` permite terminar ese caso y evitar que se ejecuten los siguientes.
+
+#### Caso `default`
+
+También se incluye:
+
+```csharp
+default:
+    Console.WriteLine("hubo un error de entrada");
+    break;
+```
+
+Este caso se ejecutaría si el valor no estuviera entre `1` y `6`.
+
+Como `Next(1, 7)` solamente genera valores dentro de ese rango, normalmente el `default` no debería ejecutarse.
+
+### Imagen de ejecución
+![Ejecución Problema 5](CAPTURAS/Problema5.png)
+
+
+### ¿Qué demuestra este problema?
+
+Este problema permite practicar el uso de **números aleatorios, ciclos, contadores y la estructura `switch`**.
+
+Además, muestra cómo se puede realizar una simulación sencilla y registrar la frecuencia con la que aparece cada uno de los posibles resultados.
