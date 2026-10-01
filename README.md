@@ -12,7 +12,6 @@ Los tres ejemplos realizados fueron:
 - Uso de comentarios `--` para ignorar parte de una consulta.
 - Inyección basada en tiempo utilizando `SLEEP()`.
 
----
 
 ### Ejemplo 1 – Manipulación de la condición con `OR '1'='1'`
 
@@ -67,7 +66,7 @@ Este ejemplo representa una **Inyección SQL basada en lógica booleana**.
 ### Imagen de ejecución
 ![Ejecución Ejemplo 1](CAPTURAS/ejemplo1SQL.png)
 
----
+
 
 ### Ejemplo 2 – Uso de comentarios para ignorar parte de la consulta
 
@@ -120,7 +119,7 @@ La condición `id = 999` ya no es tomada en cuenta.
 ### Imagen de ejecución
 ![Ejecución Ejemplo 2](CAPTURAS/ejemplo2SQL.png)
 
----
+
 
 ### Ejemplo 3 – Inyección SQL basada en tiempo
 
@@ -182,7 +181,6 @@ En este tipo de ataque no siempre se obtiene información directamente en pantal
 ![Ejecución Ejemplo 3](CAPTURAS/ejemplo3SQL.png)
 
 
----
 
 ## Conclusión del Problema 1
 
@@ -196,7 +194,7 @@ Estos ejemplos muestran por qué es importante evitar construir consultas SQL co
 
 Una de las principales formas de prevención es utilizar **consultas preparadas y parametrizadas**, ya que permiten que los valores ingresados sean tratados como datos y no como instrucciones SQL.
 
--------
+---
 
 ## 🟥PROBLEMA 2 – Uso de Dictionary, List y generación dinámica de SQL
 
@@ -212,7 +210,7 @@ Los temas principales trabajados fueron:
 - Creación dinámica de columnas y parámetros.
 - Construcción de una sentencia `INSERT INTO`.
 
----
+
 ### Explicación
 
 #### 1. Creación del diccionario
@@ -227,7 +225,7 @@ Cantidad -> 15
 
 Se usa `object` porque los valores pueden ser de distintos tipos, como `string`, `decimal` o `int`.
 
----
+
 
 #### 2. Creación de la lista `setParts`
 
@@ -243,7 +241,7 @@ Precio = @Precio
 Cantidad = @Cantidad
 ```
 
----
+
 
 #### 3. Uso de `.Keys` y `foreach`
 
@@ -264,8 +262,6 @@ Cantidad
 
 El `foreach` las recorre una por una y crea automáticamente las expresiones con sus respectivos parámetros.
 
----
-
 #### 4. Uso de `string.Join()`
 
 ```csharp
@@ -280,7 +276,7 @@ Nombre = @Nombre, Precio = @Precio, Cantidad = @Cantidad
 
 Esto permite generar de forma dinámica una cláusula que podría utilizarse en un `UPDATE`.
 
----
+
 
 #### 5. Creación de columnas y parámetros
 
@@ -299,7 +295,7 @@ Parámetros:
 @Nombre, @Precio, @Cantidad
 ```
 
----
+
 
 #### 6. Construcción de la sentencia SQL
 
@@ -326,7 +322,7 @@ Cláusula SET generada: Nombre = @Nombre, Precio = @Precio, Cantidad = @Cantidad
 La cadena sql es: INSERT INTO productos (Nombre, Precio, Cantidad) VALUES (@Nombre, @Precio, @Cantidad)
 ```
 
----
+
 
 ## Imagen de ejecución
 
