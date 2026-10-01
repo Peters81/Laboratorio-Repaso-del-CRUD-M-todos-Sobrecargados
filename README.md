@@ -1,7 +1,6 @@
 # Laboratorio-Repaso-del-CRUD-M-todos-Sobrecargados
 
 ## 🟥PROBLEMA 1 – Ejemplos de Inyección SQL
-
 En este problema se desarrollaron **tres ejemplos de consultas SQL** para comprender de forma práctica cómo funciona una vulnerabilidad de **Inyección SQL**.
 
 La inyección SQL ocurre cuando una consulta permite que ciertos valores introducidos sean interpretados como parte del código SQL y no solamente como datos. Esto puede cambiar la lógica original de la consulta, permitir consultar información que normalmente no debería mostrarse o incluso aprovechar el comportamiento de la base de datos para obtener información indirectamente.
@@ -14,9 +13,7 @@ Los tres ejemplos realizados fueron:
 
 
 ### Ejemplo 1 – Manipulación de la condición con `OR '1'='1'`
-
 ### Código utilizado
-
 ```sql
 USE cristell;
 
@@ -183,7 +180,6 @@ En este tipo de ataque no siempre se obtiene información directamente en pantal
 
 
 ## Conclusión del Problema 1
-
 Con los tres ejemplos realizados se pudieron observar diferentes formas en las que una consulta SQL puede ser manipulada:
 
 1. **`OR '1'='1'`** permite alterar la lógica de una condición y hacer que esta siempre resulte verdadera.
@@ -194,10 +190,9 @@ Estos ejemplos muestran por qué es importante evitar construir consultas SQL co
 
 Una de las principales formas de prevención es utilizar **consultas preparadas y parametrizadas**, ya que permiten que los valores ingresados sean tratados como datos y no como instrucciones SQL.
 
----
+--
 
 ## 🟥PROBLEMA 2 – Uso de Dictionary, List y generación dinámica de SQL
-
 En este problema se trabajó con un `Dictionary<string, object>` para almacenar información de un producto y posteriormente utilizar sus claves para construir de forma dinámica partes de una consulta SQL.
 
 Los temas principales trabajados fueron:
@@ -228,7 +223,6 @@ Se usa `object` porque los valores pueden ser de distintos tipos, como `string`,
 
 
 #### 2. Creación de la lista `setParts`
-
 ```csharp
 var setParts = new List<string>();
 ```
@@ -244,7 +238,6 @@ Cantidad = @Cantidad
 
 
 #### 3. Uso de `.Keys` y `foreach`
-
 ```csharp
 foreach (var key in datosInventario.Keys)
 {
@@ -263,7 +256,6 @@ Cantidad
 El `foreach` las recorre una por una y crea automáticamente las expresiones con sus respectivos parámetros.
 
 #### 4. Uso de `string.Join()`
-
 ```csharp
 string setClause = string.Join(", ", setParts);
 ```
@@ -279,7 +271,6 @@ Esto permite generar de forma dinámica una cláusula que podría utilizarse en 
 
 
 #### 5. Creación de columnas y parámetros
-
 ```csharp
 var columns = string.Join(", ", datosInventario.Keys);
 var placeholders = "@" + string.Join(", @", datosInventario.Keys);
@@ -298,7 +289,6 @@ Parámetros:
 
 
 #### 6. Construcción de la sentencia SQL
-
 ```csharp
 string sql = $"INSERT INTO productos ({columns}) VALUES ({placeholders})";
 ```
@@ -313,7 +303,6 @@ VALUES (@Nombre, @Precio, @Cantidad)
 La consulta se construye automáticamente a partir de las claves del diccionario, sin escribir manualmente cada columna.
 
 ## Resultado esperado
-
 Al ejecutar el programa, en la consola se muestra:
 
 ```text
@@ -325,16 +314,10 @@ La cadena sql es: INSERT INTO productos (Nombre, Precio, Cantidad) VALUES (@Nomb
 
 
 ## Imagen de ejecución
-
-> Insertar aquí la captura de pantalla donde se observa la salida del programa en la consola.
-
-```markdown
 ![Ejecución Problema 2](CAPTURAS/Problema2.png)
-```
 
 
 ## Conclusión del Problema 2
-
 En este problema se practicó el uso conjunto de **diccionarios, listas, ciclos `foreach` y `string.Join()`**.
 
 El `Dictionary<string, object>` permitió almacenar los datos del producto utilizando los nombres de las columnas como claves. Posteriormente, `.Keys` permitió obtener esas claves y utilizarlas para generar automáticamente tanto una cláusula `SET` como una sentencia `INSERT INTO`.
