@@ -303,16 +303,17 @@ VALUES (@Nombre, @Precio, @Cantidad)
 La consulta se construye automáticamente a partir de las claves del diccionario, sin escribir manualmente cada columna.
 
 
+
 ## Imagen de ejecución
 ![Ejecución Problema 2](CAPTURAS/Problema2.png)
+
 
 
 ## Conclusión del Problema 2
 En este problema se practicó el uso conjunto de **diccionarios, listas, ciclos `foreach` y `string.Join()`**.
 
-El `Dictionary<string, object>` permitió almacenar los datos del producto utilizando los nombres de las columnas como claves. Posteriormente, `.Keys` permitió obtener esas claves y utilizarlas para generar automáticamente tanto una cláusula `SET` como una sentencia `INSERT INTO`.
+El `Dictionary<string, object>` permitió almacenar los datos del producto utilizando los nombres de las columnas como claves. Posteriormente, `.Keys` permitió obtener esas claves y utilizarlas para generar automáticamente tanto una cláusula `SET` como una sentencia `INSERT INTO`.Con este ejemplo se puede comprender cómo estas estructuras permiten crear código más flexible y reutilizable al momento de trabajar con operaciones CRUD y consultas SQL.
 
-Con este ejemplo se puede comprender cómo estas estructuras permiten crear código más flexible y reutilizable al momento de trabajar con operaciones CRUD y consultas SQL.
 ---
 
 ## 🟥PROBLEMA 3 – Recursividad con el cálculo del factorial
