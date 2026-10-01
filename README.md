@@ -397,3 +397,114 @@ Este problema permite comprender cómo funciona un **método recursivo**, identi
 
 De esta forma, el programa puede resolver el cálculo del factorial reutilizando el mismo método hasta llegar al caso base.
 
+---
+
+## 🟥PROBLEMA 4 – Métodos Sobrecargados
+
+En este problema se trabaja el concepto de **sobrecarga de métodos**, utilizando dos métodos llamados `Cuadrado()` que tienen el mismo nombre, pero reciben diferentes tipos de parámetros.
+
+Según la teoría vista en clase, un método puede tener el mismo nombre que otro siempre que cambie su **firma**, es decir, el número, tipo u orden de los parámetros. El compilador identifica cuál método debe ejecutar según el argumento que recibe. :chatgpt-content-reference{index="0"}
+
+### Conceptos importantes
+
+#### Sobrecarga de métodos
+
+En la clase `SobreCarga` existen dos versiones del método `Cuadrado()`:
+
+```csharp
+public int Cuadrado(int valorInt)
+```
+
+y:
+
+```csharp
+public double Cuadrado(double valorDouble)
+```
+
+Ambos métodos tienen el mismo nombre, pero reciben parámetros diferentes:
+
+```text
+Cuadrado(int)
+Cuadrado(double)
+```
+
+Esto es lo que permite que exista la sobrecarga.
+
+#### Firma del método
+
+La diferencia entre los métodos sobrecargados se encuentra en su **firma**, que está formada por el nombre del método y sus parámetros.
+
+En este caso:
+
+```text
+Cuadrado(int)
+Cuadrado(double)
+```
+
+Aunque tengan el mismo nombre, el compilador puede diferenciarlos por el tipo de dato recibido. :chatgpt-content-reference{index="1"}
+
+#### Selección automática del método
+
+Cuando se llama:
+
+```csharp
+Cuadrado(7)
+```
+
+el valor `7` es un entero, por lo tanto se ejecuta:
+
+```csharp
+public int Cuadrado(int valorInt)
+```
+
+En cambio, cuando se llama:
+
+```csharp
+Cuadrado(7.5)
+```
+
+se utiliza la versión que recibe un `double`:
+
+```csharp
+public double Cuadrado(double valorDouble)
+```
+
+El compilador selecciona automáticamente el método adecuado según el tipo del argumento.
+
+#### Uso de la clase en `Program`
+
+En el programa principal se crea una instancia de la clase:
+
+```csharp
+SobreCarga varSobreCarga = new SobreCarga();
+```
+
+Luego se utiliza el objeto `varSobreCarga` para llamar a los métodos de la clase:
+
+```csharp
+varSobreCarga.ProbarMetodosSobreCargados();
+```
+
+También se puede llamar directamente al método `Cuadrado()`:
+
+```csharp
+varSobreCarga.Cuadrado(8);
+```
+
+y:
+
+```csharp
+varSobreCarga.Cuadrado(9);
+```
+
+Como `8` y `9` son enteros, en ambos casos se utiliza la versión que recibe un parámetro `int`.
+
+### Imagen de ejecución
+![Ejecución Problema 4](CAPTURAS/Problema4.png)
+
+
+### ¿Qué demuestra este problema?
+
+Este problema demuestra cómo la **sobrecarga de métodos** permite utilizar un mismo nombre para realizar una operación similar con diferentes tipos de datos.
+
+En este caso, `Cuadrado()` puede trabajar tanto con valores `int` como con valores `double`, y C# selecciona automáticamente la versión correcta según el argumento utilizado.
