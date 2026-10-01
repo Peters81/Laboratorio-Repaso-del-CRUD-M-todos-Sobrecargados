@@ -1,6 +1,6 @@
 # Laboratorio-Repaso-del-CRUD-M-todos-Sobrecargados
 
-##🟥PROBLEMA 1 – Ejemplos de Inyección SQL
+## 🟥PROBLEMA 1 – Ejemplos de Inyección SQL
 
 En este problema se desarrollaron **tres ejemplos de consultas SQL** para comprender de forma práctica cómo funciona una vulnerabilidad de **Inyección SQL**.
 
