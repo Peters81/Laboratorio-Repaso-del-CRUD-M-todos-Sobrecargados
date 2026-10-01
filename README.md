@@ -14,7 +14,7 @@ Los tres ejemplos realizados fueron:
 
 ---
 
-## Ejemplo 1 – Manipulación de la condición con `OR '1'='1'`
+### Ejemplo 1 – Manipulación de la condición con `OR '1'='1'`
 
 ### Código utilizado
 
@@ -77,7 +77,7 @@ Demuestra cómo una consulta mal construida puede permitir modificar la lógica 
 
 ---
 
-## Ejemplo 2 – Uso de comentarios para ignorar parte de la consulta
+### Ejemplo 2 – Uso de comentarios para ignorar parte de la consulta
 
 ### Código utilizado
 
@@ -139,7 +139,7 @@ En un sistema real, esto podría permitir ignorar validaciones importantes, como
 
 ---
 
-## Ejemplo 3 – Inyección SQL basada en tiempo
+### Ejemplo 3 – Inyección SQL basada en tiempo
 
 ### Código utilizado
 
