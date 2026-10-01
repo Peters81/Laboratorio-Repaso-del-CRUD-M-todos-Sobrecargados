@@ -63,17 +63,9 @@ Por esta razón, la consulta puede terminar mostrando varios o incluso todos los
 
 Este ejemplo representa una **Inyección SQL basada en lógica booleana**.
 
-### ¿Qué demuestra este ejemplo?
-
-Demuestra cómo una consulta mal construida puede permitir modificar la lógica del filtro y obtener información que originalmente no debía mostrarse.
 
 ### Imagen de ejecución
-
-> Insertar aquí la captura de pantalla de la ejecución del Ejemplo 1.
-
-<!-- Ejemplo:
-![Ejecución Ejemplo 1](imagenes/ejemplo1.png)
--->
+![Ejecución Ejemplo 1](CAPTURAS/ejemplo1SQL.png)
 
 ---
 
@@ -123,19 +115,10 @@ WHERE nombre = 'Teclado';
 
 La condición `id = 999` ya no es tomada en cuenta.
 
-### ¿Qué demuestra este ejemplo?
 
-Demuestra cómo el uso de comentarios puede utilizarse para **anular condiciones adicionales de una consulta**.
-
-En un sistema real, esto podría permitir ignorar validaciones importantes, como una contraseña, un identificador o alguna otra condición de seguridad.
 
 ### Imagen de ejecución
-
-> Insertar aquí la captura de pantalla de la ejecución del Ejemplo 2.
-
-<!-- Ejemplo:
-![Ejecución Ejemplo 2](imagenes/ejemplo2.png)
--->
+![Ejecución Ejemplo 2](CAPTURAS/ejemplo2SQL.png)
 
 ---
 
@@ -193,19 +176,11 @@ Este comportamiento permite explicar un tipo de vulnerabilidad conocido como **T
 
 En este tipo de ataque no siempre se obtiene información directamente en pantalla. En cambio, se analiza cuánto demora la base de datos en responder.
 
-### ¿Qué demuestra este ejemplo?
 
-Demuestra que el **tiempo de respuesta de la base de datos** también puede utilizarse para detectar si una determinada condición SQL fue ejecutada.
-
-Si una entrada permite ejecutar funciones como `SLEEP()`, puede significar que el contenido introducido está siendo interpretado como código SQL.
 
 ### Imagen de ejecución
+![Ejecución Ejemplo 3](CAPTURAS/ejemplo3SQL.png)
 
-> Insertar aquí la captura de pantalla de la ejecución del Ejemplo 3.
-
-<!-- Ejemplo:
-![Ejecución Ejemplo 3](imagenes/ejemplo3.png)
--->
 
 ---
 
@@ -220,3 +195,154 @@ Con los tres ejemplos realizados se pudieron observar diferentes formas en las q
 Estos ejemplos muestran por qué es importante evitar construir consultas SQL concatenando directamente los datos ingresados por el usuario.
 
 Una de las principales formas de prevención es utilizar **consultas preparadas y parametrizadas**, ya que permiten que los valores ingresados sean tratados como datos y no como instrucciones SQL.
+
+-------
+
+## 🟥PROBLEMA 2 – Uso de Dictionary, List y generación dinámica de SQL
+
+En este problema se trabajó con un `Dictionary<string, object>` para almacenar información de un producto y posteriormente utilizar sus claves para construir de forma dinámica partes de una consulta SQL.
+
+Los temas principales trabajados fueron:
+
+- Uso de `Dictionary<string, object>`.
+- Uso de la propiedad `.Keys`.
+- Recorrido de colecciones mediante `foreach`.
+- Uso de `List<string>`.
+- Uso de `string.Join()`.
+- Creación dinámica de columnas y parámetros.
+- Construcción de una sentencia `INSERT INTO`.
+
+---
+### Explicación
+
+#### 1. Creación del diccionario
+
+Se crea un `Dictionary<string, object>` llamado `datosInventario`, donde cada dato se guarda como una relación **clave-valor**:
+
+```text
+Nombre -> Laptop HP Envy
+Precio -> 850.99
+Cantidad -> 15
+```
+
+Se usa `object` porque los valores pueden ser de distintos tipos, como `string`, `decimal` o `int`.
+
+---
+
+#### 2. Creación de la lista `setParts`
+
+```csharp
+var setParts = new List<string>();
+```
+
+Esta lista se utiliza para guardar expresiones como:
+
+```text
+Nombre = @Nombre
+Precio = @Precio
+Cantidad = @Cantidad
+```
+
+---
+
+#### 3. Uso de `.Keys` y `foreach`
+
+```csharp
+foreach (var key in datosInventario.Keys)
+{
+    setParts.Add($"{key} = @{key}");
+}
+```
+
+`.Keys` obtiene las claves del diccionario, es decir:
+
+```text
+Nombre
+Precio
+Cantidad
+```
+
+El `foreach` las recorre una por una y crea automáticamente las expresiones con sus respectivos parámetros.
+
+---
+
+#### 4. Uso de `string.Join()`
+
+```csharp
+string setClause = string.Join(", ", setParts);
+```
+
+`string.Join()` une los elementos de la lista en una sola cadena:
+
+```text
+Nombre = @Nombre, Precio = @Precio, Cantidad = @Cantidad
+```
+
+Esto permite generar de forma dinámica una cláusula que podría utilizarse en un `UPDATE`.
+
+---
+
+#### 5. Creación de columnas y parámetros
+
+```csharp
+var columns = string.Join(", ", datosInventario.Keys);
+var placeholders = "@" + string.Join(", @", datosInventario.Keys);
+```
+
+Se generan automáticamente:
+
+```text
+Columnas:
+Nombre, Precio, Cantidad
+
+Parámetros:
+@Nombre, @Precio, @Cantidad
+```
+
+---
+
+#### 6. Construcción de la sentencia SQL
+
+```csharp
+string sql = $"INSERT INTO productos ({columns}) VALUES ({placeholders})";
+```
+
+El resultado final es:
+
+```sql
+INSERT INTO productos (Nombre, Precio, Cantidad)
+VALUES (@Nombre, @Precio, @Cantidad)
+```
+
+La consulta se construye automáticamente a partir de las claves del diccionario, sin escribir manualmente cada columna.
+
+## Resultado esperado
+
+Al ejecutar el programa, en la consola se muestra:
+
+```text
+Cláusula SET generada: Nombre = @Nombre, Precio = @Precio, Cantidad = @Cantidad
+
+La cadena sql es: INSERT INTO productos (Nombre, Precio, Cantidad) VALUES (@Nombre, @Precio, @Cantidad)
+```
+
+---
+
+## Imagen de ejecución
+
+> Insertar aquí la captura de pantalla donde se observa la salida del programa en la consola.
+
+```markdown
+![Ejecución Problema 2](CAPTURAS/Problema2.png)
+```
+
+
+## Conclusión del Problema 2
+
+En este problema se practicó el uso conjunto de **diccionarios, listas, ciclos `foreach` y `string.Join()`**.
+
+El `Dictionary<string, object>` permitió almacenar los datos del producto utilizando los nombres de las columnas como claves. Posteriormente, `.Keys` permitió obtener esas claves y utilizarlas para generar automáticamente tanto una cláusula `SET` como una sentencia `INSERT INTO`.
+
+Con este ejemplo se puede comprender cómo estas estructuras permiten crear código más flexible y reutilizable al momento de trabajar con operaciones CRUD y consultas SQL.
+
+
