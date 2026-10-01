@@ -1,0 +1,15 @@
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\bin\Debug\net10.0\SobreCargaMetodos.exe
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\bin\Debug\net10.0\SobreCargaMetodos.deps.json
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\bin\Debug\net10.0\SobreCargaMetodos.runtimeconfig.json
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\bin\Debug\net10.0\SobreCargaMetodos.dll
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\bin\Debug\net10.0\SobreCargaMetodos.pdb
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\obj\Debug\net10.0\SobreCargaMetodos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\obj\Debug\net10.0\SobreCargaMetodos.AssemblyInfoInputs.cache
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\obj\Debug\net10.0\SobreCargaMetodos.AssemblyInfo.cs
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\obj\Debug\net10.0\SobreCargaMetodos.csproj.CoreCompileInputs.cache
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\obj\Debug\net10.0\SobreCargaMetodos.dll
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\obj\Debug\net10.0\refint\SobreCargaMetodos.dll
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\obj\Debug\net10.0\SobreCargaMetodos.pdb
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\obj\Debug\net10.0\SobreCargaMetodos.genruntimeconfig.cache
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\obj\Debug\net10.0\ref\SobreCargaMetodos.dll
+C:\Users\niomu\Desktop\SobreCargaMetodos\SobreCargaMetodos\obj\Debug\net10.0\SobreCar.AA7ED4EB.Up2Date
